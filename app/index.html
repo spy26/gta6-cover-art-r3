@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice Keyart Studio — GTA-style cover maker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Vice Keyart Studio</h1>
+    <p>Your photos &rarr; a Vice City key-art poster. Offline, nothing uploads.</p>
+  </div>
+  <div class="top-badge" title="Vice Keyart Studio mark">☀</div>
+</header>
+
+<main class="layout">
+  <section class="preview-col">
+    <div class="canvas-wrap">
+      <canvas id="preview" width="920" height="920"></canvas>
+    </div>
+    <p class="hint">Drag the cover to pan the selected panel &middot; scroll to zoom &middot; click a panel to select it.</p>
+  </section>
+
+  <aside class="controls">
+    <section>
+      <h2>Photos</h2>
+      <div class="photo-row">
+        <label>Photo 1 <input type="file" id="file-0" accept="image/*"></label>
+        <span class="filelabel" id="filelabel-0">Sample: Boulevard</span>
+        <button type="button" class="mini" id="swap-0">Swap sample</button>
+      </div>
+      <div class="photo-row">
+        <label>Photo 2 <input type="file" id="file-1" accept="image/*"></label>
+        <span class="filelabel" id="filelabel-1">Sample: Rooftop</span>
+        <button type="button" class="mini" id="swap-1">Swap sample</button>
+      </div>
+      <div class="photo-row">
+        <label>Photo 3 <input type="file" id="file-2" accept="image/*"></label>
+        <span class="filelabel" id="filelabel-2">Sample: Neon Street</span>
+        <button type="button" class="mini" id="swap-2">Swap sample</button>
+      </div>
+      <div class="photo-row">
+        <label>Photo 4 <input type="file" id="file-3" accept="image/*"></label>
+        <span class="filelabel" id="filelabel-3">Sample: Pier</span>
+        <button type="button" class="mini" id="swap-3">Swap sample</button>
+      </div>
+      <div class="photo-row">
+        <label>Photo 5 <input type="file" id="file-4" accept="image/*"></label>
+        <span class="filelabel" id="filelabel-4">Sample: Beach</span>
+        <button type="button" class="mini" id="swap-4">Swap sample</button>
+      </div>
+      <p class="note">Samples: Boulevard, Rooftop, Neon Street, Pier &amp; Beach. Uploads stay on your machine.</p>
+    </section>
+
+    <section>
+      <h2>Layout</h2>
+      <div class="chips" id="layouts"></div>
+    </section>
+
+    <section>
+      <h2>Style preset</h2>
+      <div class="chips" id="presets"></div>
+    </section>
+
+    <section>
+      <h2>Caption</h2>
+      <label class="field">Title <input type="text" id="in-title" maxlength="24"></label>
+      <label class="field">Tagline <input type="text" id="in-tagline" maxlength="32"></label>
+      <label class="field">Subline <input type="text" id="in-subline" maxlength="48"></label>
+      <label class="field">Name <input type="text" id="in-name" maxlength="24"></label>
+      <label class="field">Stars
+        <select id="in-stars">
+          <option value="0">0</option><option value="1">1</option>
+          <option value="2">2</option><option value="3">3</option>
+          <option value="4">4</option><option value="5" selected>5</option>
+        </select>
+      </label>
+    </section>
+
+    <section>
+      <h2>Effects</h2>
+      <label class="check"><input type="checkbox" id="fx-grain"> Film grain</label>
+      <label class="check"><input type="checkbox" id="fx-halftone"> Halftone dots</label>
+      <label class="check"><input type="checkbox" id="fx-palms"> Palm silhouettes</label>
+      <label class="check"><input type="checkbox" id="fx-sun"> Retro sun emblem</label>
+    </section>
+
+    <section>
+      <h2>Panels</h2>
+      <label class="field">Selected panel
+        <select id="in-panel"></select>
+      </label>
+      <label class="field">Zoom
+        <input type="range" id="in-zoom" min="1" max="3" step="0.05" value="1">
+      </label>
+      <button type="button" class="mini" id="btn-crop-reset">Reset crops</button>
+    </section>
+
+    <section>
+      <h2>Export</h2>
+      <div class="chips" id="sizes"></div>
+      <button type="button" class="export" id="btn-export">Export PNG</button>
+      <p class="note">PNG at the exact post size — 1080 &times; 1080, 1080 &times; 1350, 1920 &times; 1080 or 1080 &times; 1920.</p>
+    </section>
+  </aside>
+</main>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
